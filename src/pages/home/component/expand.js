@@ -1,8 +1,7 @@
 import React, { useState } from 'react';
 import './expand.css';
 import localight from '../../../photos/localight.png';
-import me from '../../../photos/me.jpg';
-import beach from '../../../photos/beach.jpg';
+
 import amazon from '../../../photos/amazon-orange.jpg';
 import cpp from '../../../photos/cpp.png';
 function ExpandableCard({ imageSrc, description }) {

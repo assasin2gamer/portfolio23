@@ -18,6 +18,11 @@ export const Nav = () => {
   const [screenWidth, setScreenWidth] = useState(window.innerWidth);
   const [screenHeight, setScreenHeight] = useState(window.innerHeight);
   const [phone, setPhone] = useState(false);
+  const [contact, setContact] = useState(false);
+
+  const contactMe = () => {
+    setContact(!contact);
+  }
 
   const [isMenuOpen, setMenuOpen] = useState(false);
 
@@ -78,19 +83,23 @@ export const Nav = () => {
                 onClick={toggleMenu}
                 style={{ position: 'absolute', left: '5px', fontSize: '40px', zIndex:'20'}}
               />
+              
               <div className={`boxout ${isMenuOpen ? 'open' : ''}`} style={{width:'100%', position:'relative' }} onClick={toggleMenu}>
                 <div style={{backgroundColor:'white', width:'60%', height:'100vh'}}>
                 <NavLink to="/">
                   <button style= {{width:'100%', left:'-5px', position:'relative', top:'10%'}} className="button">Home</button>
                 </NavLink>
-                <NavLink to="/coding">
+                <NavLink to="/about">
                   <button style= {{width:'100%', left:'-5px', position:'relative', top:'10%'}} className="button">About</button>
                 </NavLink>
+                <NavLink to="/coding">
                   <button style= {{width:'100%', left:'-5px', position:'relative', top:'10%'}} className="button">Computer Science</button>
+                </NavLink>
                 <NavLink to="/music">
                   <button style= {{width:'100%', left:'-5px', position:'relative', top:'10%'}} className="button">Music</button>
                 </NavLink>
-                <button style= {{width:'100%', left:'-5px', position:'relative', top:'10%'}} className="button">Contact</button>
+                <button onClick={contactMe} style= {{width:'100%', left:'-5px', position:'relative', top:'10%'}} className="button"><a href="mailto:stephen0.0chang@gmail.com">Contact</a></button>
+                
               </div>
               </div>
               </div>
@@ -100,14 +109,22 @@ export const Nav = () => {
             <NavLink to="/">
                 <button className="button" >Home</button>
               </NavLink>
-              <NavLink to="/coding">
+              <NavLink to="/about">
                 <button className="button" >About</button>
               </NavLink>
+              <NavLink to="/coding">
               <button className="button">Computer Science</button>
+              </NavLink>
               <NavLink to="/music">
               <button className="button">Music</button>
               </NavLink>
-              <button className="button">Contact</button>
+              <button className="button" onClick={contactMe}>Contact</button>
+              {
+                  contact?
+                  <div>stephen0.0chang@gmail.com</div>
+                  :
+                  <div></div>
+                }
             </div>
        }
         </div>

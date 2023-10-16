@@ -7,7 +7,7 @@ import { Home } from './pages/home/home.js';
 import { Contact } from './pages/contact/contact';
 import { Coding } from './pages/code/code';
 import { Music } from './pages/music/music';
-import { Photos } from './pages/photos/photos';
+import { About } from './pages/about/about';
 
 
 import { useLocation } from 'react-router-dom/dist';
@@ -26,7 +26,7 @@ function App() {
                 <Route exact path='/' element={<Home />} />
                 <Route path='/coding' element={<Coding />} />
                 <Route path='/music' element={<Music />} />
-                <Route path='/photos' element={<Photos />} />
+                <Route path='/about' element={<About />} />
                 <Route path='/contact' element={<Contact />} />
 
             </Routes>
